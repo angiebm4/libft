@@ -6,13 +6,13 @@
 #    By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 11:55:51 by abarrio-          #+#    #+#              #
-#    Updated: 2023/09/14 21:06:50 by abarrio-         ###   ########.fr        #
+#    Updated: 2023/09/16 19:19:43 by abarrio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 CFLAGS=-Wall -Werror -Wextra 
-#-fsanitize=address -g3
+#-g3 -fsanitize=address
 FUNCTIONS=	ft_isalpha.c \
 			ft_isdigit.c \
 			ft_isalnum.c \
@@ -35,7 +35,10 @@ FUNCTIONS=	ft_isalpha.c \
 			ft_strnstr.c \
 			ft_atoi.c \
 			ft_calloc.c \
-			ft_strdup.c
+			ft_strdup.c \
+			ft_substr.c \
+			ft_strjoin.c \
+			ft_split.c
 
 OBJ= $(FUNCTIONS:%.c=%.o)
 

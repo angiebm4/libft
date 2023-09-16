@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_textntext.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:53:57 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/14 21:47:41 by abarrio-         ###   ########.fr       */
+/*   Created: 2023/09/15 19:08:03 by abarrio-          #+#    #+#             */
+/*   Updated: 2023/09/15 20:00:23 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strnstr(const char *text, const char *word, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	
+	int	i;
+	int	j;
+
 	i = 0;
-	if (!word[0])
-		return ((char *)text);
-	while (text[i] && i < len)
+	j = 0;
+	while (s1[i] != '\0')
 	{
-		if (text[i] == word[0])
-		{
-			j = 0;
-			while (word[j] == text[i + j] && (i + j) < len)
-			{
-				if (word[j + 1] == '\0')
-					return ((char *)&text[i]);
-				j++;
-			}
-		}
-		i++;
+		if (strchr(set, s1[i]) == NULL)
+			break;
 	}
-	return (NULL);
 }
-	

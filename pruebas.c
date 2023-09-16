@@ -6,7 +6,7 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:55:45 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/15 14:07:47 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/16 19:17:08 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 int	test_isalpha(void)
 {
@@ -99,7 +100,7 @@ int	test_memset(void)
 	char	str3[] = "11111111111";
 
 	memset(str1, 'A', 2);
-	printf("%s\n%s\n",ft_memset(str, 'A', 2), memset(str1, 'A', 2));
+	ft_memset(str, 'A', 2), memset(str1, 'A', 2);
 	if (strcmp(str, str1) != 0)
 		return (0);
 	ft_memset(str2, 'a', 11);
@@ -126,7 +127,6 @@ int	test_bzero(void)
 		return (0);
 	return (1);
 }
-#include <unistd.h>
 
 int	test_memcpy(void)
 {
@@ -246,12 +246,11 @@ int	test_strrchr(void)
 {
 	char	*str = "uwwwtrr wu";
 
-	// if (ft_strrchr(str, 'w') != strrchr(str, 'w'))
-	// 	return (0);
-	// if (ft_strrchr(str, 'y') != strrchr(str, 'y'))
-	// 	return (0);
+	if (ft_strrchr(str, 'w') != strrchr(str, 'w'))
+		return (0);
+	if (ft_strrchr(str, 'y') != strrchr(str, 'y'))
+		return (0);
 	str = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
-	printf("%s\n", ft_strrchr(str, '\0'));
 	if (ft_strrchr(str, '\0') != strrchr(str, '\0'))
 		return (0);
 	return (1);
@@ -303,7 +302,7 @@ int	test_memcmp(void)
 
 int	test_strnstr(void)
 {
-	const char	text[]= "Hola que tal estas";
+	const char	text[]= "HolHolaa que tal estas";
 	const char	word[]= "tal estas";
 	const char	word2[]= "111111111tal estas11111111111111111111111";
 	char haystack[30] = "aaabcabcd";
@@ -367,6 +366,41 @@ int	test_strdup(void)
 	if (memcmp(ft_strdup(src), strdup(src1), 12) != 0)
 		return (0);
 	return (1);	
+}
+
+int	test_substr(void)
+{
+	char const		s[]="Me llamo Angela Barrio";	
+	
+	if (ft_substr(s, 0, 0) != ft_strdup(""))
+		return (0);
+	return (1);
+}
+
+int	test_strjoin(void)
+{
+	char	s1[]="Hola";
+	char	s2[]="Dani";
+
+	printf("%s\n", ft_strjoin(s1, s2));
+	return (1);
+}
+// falta strtrim
+
+int	test_split(void)
+{
+	const char	str[]=" Hola que       tal estas uwu";
+	//const char	str1[]=" Hola que tal estas";
+	//const char	str2[]="111111111";
+	char		**uwu = ft_split(str, ' ');
+	int 		x = 0;
+	
+	while(uwu[x])
+	{
+		printf("%s\n", uwu[x]);
+		x++;
+	}
+	return(1);
 }
 
 int	main(void)
@@ -463,4 +497,16 @@ int	main(void)
 		printf("ft_strdup %sOK!%s\n", GREENFOSFI, CLEAR);
 	else
 		printf("ft_strdup %sKO!%s\n", RED, CLEAR);
+	if (test_substr() == 1)
+		printf("ft_substr %sOK!%s\n", GREENFOSFI, CLEAR);
+	else
+		printf("ft_substr %sKO!%s\n", RED, CLEAR);
+	if (test_strjoin() == 1)
+		printf("ft_strjoin %sOK!%s\n", GREENFOSFI, CLEAR);
+	else
+		printf("ft_strjoin %sKO!%s\n", RED, CLEAR);
+	if (test_split() == 1)
+		printf("ft_split %sOK!%s\n", GREENFOSFI, CLEAR);
+	else
+		printf("ft_split %sKO!%s\n", RED, CLEAR);
 }
