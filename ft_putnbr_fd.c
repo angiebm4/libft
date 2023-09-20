@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:55:37 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/20 13:24:03 by abarrio-         ###   ########.fr       */
+/*   Created: 2023/09/18 16:07:13 by abarrio-          #+#    #+#             */
+/*   Updated: 2023/09/19 16:13:40 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#include "libft.h"
+#include <unistd.h>
 
-// color de texto
-#define RED "\x1B[31m"
-#define GREEN "\x1B[32m"
-#define GREENFOSFI "\x1B[38;2;17;245;120m"
-#define	MORADO "\033[0;35m"
-#define CLEAR "\033[0m"
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nb;
+	char	c;
 
-#endif
+	nb = n;
+	if (nb < 0)
+	{
+		write (fd, "-", 1);
+		nb = nb * -1;
+	}
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	c = (nb % 10) + '0';
+	write (fd, &c, 1);
+}

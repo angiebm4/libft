@@ -6,7 +6,7 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:55:45 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/16 19:17:08 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:25:06 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 int	test_isalpha(void)
 {
@@ -173,14 +174,14 @@ int	test_strlcpy(void)
 
 int	test_strlcat(void)
 {
-	const char	src[]="123456789";
+	const char	src[]="lorem ipsum dolor sit amet";
 	char		dest[50]="";
 	char		dest2[50]="";
 	char		dest1[]="ubyihuiuwu";
 	char		dest3[]="ubyihuiuwu";
 
 
-	if (ft_strlcat(dest, src, 6) != strlcat(dest2, src, 6))
+	if (ft_strlcat(dest, src, 5) != strlcat(dest2, src, 5))
 		return (0);
 	if (ft_strlcat(dest1, src, 2) != strlcat(dest3, src, 2))
 		return (0);
@@ -370,37 +371,158 @@ int	test_strdup(void)
 
 int	test_substr(void)
 {
-	char const		s[]="Me llamo Angela Barrio";	
+	/*char const		s[]="Me llamo Angela Barrio";	
 	
 	if (ft_substr(s, 0, 0) != ft_strdup(""))
-		return (0);
+		return (0);*/
 	return (1);
 }
 
 int	test_strjoin(void)
 {
-	char	s1[]="Hola";
-	char	s2[]="Dani";
+	//char	s1[]="Hola";
+	//char	s2[]="Dani";
 
-	printf("%s\n", ft_strjoin(s1, s2));
+	//printf("%s\n", ft_strjoin(s1, s2));
 	return (1);
 }
-// falta strtrim
+int	test_strtrim(void)
+{
+	/*char *ft_trim;
+	
+	{
+		const char  str[]= "sssss";
+	    const char  set[]= "sfgsdfgs";
+
+		ft_trim = ft_strtrim(str, set);
+		if (!strcmp("", ft_trim))
+			printf("epic\n");
+		else
+			printf("epicn't: (%s)\n", ft_trim);
+	}
+	{
+		const char	str[] = "";
+		const char	set[] = "holaquepasaquetal";
+
+		ft_trim = ft_strtrim(str, set);
+		if (!strcmp("", ft_trim))
+			printf("epic\n");
+		else
+			printf("epicn't: (%s)\n", ft_trim);
+	}
+	{
+		const char	str[] = "holaquepasaquetal";
+		const char	set[] = "";
+
+		ft_trim = ft_strtrim(str, set);
+		if (!strcmp("holaquepasaquetal", ft_trim))
+			printf("epic\n");
+		else
+			printf("epicn't: (%s)\n", ft_trim);
+	}
+	{
+		const char 	str[] = "       hola       quetal\t\nbarralloquesea ,  \n";
+		const char	set[] = "\n ";
+
+		ft_trim = ft_strtrim(str, set);
+		if (!strcmp("hola       quetal\t\nbarralloquesea ,", ft_trim))
+			printf("epic\n");
+		else
+			printf("epicn't: (%s)\n", ft_trim);
+	}
+	{
+		const char 	str[] = "abababbaahola       quetal\t\nbarralloqueseababab";
+		const char	set[] = "ab";
+
+		ft_trim = ft_strtrim(str, set);
+		if (!strcmp("hola       quetal\t\nbarralloquese", ft_trim))
+			printf("epic\n");
+		else
+			printf("epicn't: (%s)\n", ft_trim);
+		
+	}*/
+	return 1;
+}
 
 int	test_split(void)
 {
-	const char	str[]=" Hola que       tal estas uwu";
+	//const char	str[]="  Hola   que         tal estas uwu  ";
 	//const char	str1[]=" Hola que tal estas";
 	//const char	str2[]="111111111";
-	char		**uwu = ft_split(str, ' ');
-	int 		x = 0;
+	//char		**uwu = ft_split(str, ' ');
+	//int 		x = 0;
 	
-	while(uwu[x])
+	
+	/*while(uwu[x])
 	{
 		printf("%s\n", uwu[x]);
 		x++;
-	}
+	}*/
 	return(1);
+}
+
+int	test_itoa(void)
+{
+	//int n = -2147483648;
+
+    //printf("%s\n", ft_itoa(n));
+	return (1);
+}
+
+/*static char	f(unsigned int n, char str)
+{
+	if ((n % 2) == 0)
+		return ('2');
+	return (str);
+}*/
+
+int	test_strmapi(void)
+{
+	//char const str[]= "uwu owo";
+
+    //printf("%s\n", ft_strmapi(str, f));
+	return (1);
+}
+
+int	test_striteri(void)
+{
+	return (1);
+}
+
+int	test_putchar_fd(void)
+{
+	char    c = '9';
+    int     fd= open("uwu.txt", O_WRONLY);
+
+    ft_putchar_fd(c, fd);
+	return (1);
+}
+
+int	test_putstr_fd(void)
+{
+	char    *c = "uwu owo ewe";
+    int     fd= open("uwu.txt", O_WRONLY);
+	
+    ft_putstr_fd(c, fd);
+	return (1);
+}
+
+int	test_putendl_fd(void)
+{
+	char    *c = "uwu owo ewe";
+    int     fd= open("uwu.txt", O_WRONLY);
+
+    ft_putendl_fd(c, fd);
+	return (1);
+}
+
+int	test_putnbr_fd(void)
+{
+	int nb = -5435435;
+    int fd= open("uwu.txt", O_WRONLY);
+
+    ft_putnbr_fd(nb, fd);
+	return (1);
 }
 
 int	main(void)
@@ -498,15 +620,47 @@ int	main(void)
 	else
 		printf("ft_strdup %sKO!%s\n", RED, CLEAR);
 	if (test_substr() == 1)
-		printf("ft_substr %sOK!%s\n", GREENFOSFI, CLEAR);
+		printf("ft_substr %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
 	else
 		printf("ft_substr %sKO!%s\n", RED, CLEAR);
 	if (test_strjoin() == 1)
-		printf("ft_strjoin %sOK!%s\n", GREENFOSFI, CLEAR);
+		printf("ft_strjoin %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
 	else
 		printf("ft_strjoin %sKO!%s\n", RED, CLEAR);
+	if (test_strtrim() == 1)
+		printf("ft_strtrim %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_strtrim %sKO!%s\n", RED, CLEAR);
 	if (test_split() == 1)
-		printf("ft_split %sOK!%s\n", GREENFOSFI, CLEAR);
+		printf("ft_split %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
 	else
 		printf("ft_split %sKO!%s\n", RED, CLEAR);
+	if (test_itoa() == 1)
+		printf("ft_itoa %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_itoa %sKO!%s\n", RED, CLEAR);
+	if (test_split() == 1)
+		printf("ft_strmapi %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_strmapi %sKO!%s\n", RED, CLEAR);
+	if (test_striteri() == 1)
+		printf("ft_striteri %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_striteri %sKO!%s\n", RED, CLEAR);
+	if (test_putchar_fd() == 1)
+		printf("ft_putchar_fd %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_putchar_fd %sKO!%s\n", RED, CLEAR);
+	if (test_putstr_fd() == 1)
+		printf("ft_putstr_fd %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_putstr_fd %sKO!%s\n", RED, CLEAR);
+	if (test_putendl_fd() == 1)
+		printf("ft_putendl_fd %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_putendl_fd %sKO!%s\n", RED, CLEAR);
+	if (test_putnbr_fd() == 1)
+		printf("ft_putnbr_fd %sSABES QUE NO ESTA BIEN EL TEST UWU!%s\n", MORADO, CLEAR);
+	else
+		printf("ft_putnbr_fd %sKO!%s\n", RED, CLEAR);
 }

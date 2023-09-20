@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:55:37 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/20 13:24:03 by abarrio-         ###   ########.fr       */
+/*   Created: 2023/09/18 16:07:48 by abarrio-          #+#    #+#             */
+/*   Updated: 2023/09/18 16:36:45 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#include "libft.h"
+#include <stdlib.h>
 
-// color de texto
-#define RED "\x1B[31m"
-#define GREEN "\x1B[32m"
-#define GREENFOSFI "\x1B[38;2;17;245;120m"
-#define	MORADO "\033[0;35m"
-#define CLEAR "\033[0m"
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*result;
+	int		i;
 
-#endif
+	result = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
+}

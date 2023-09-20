@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:55:37 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/20 13:24:03 by abarrio-         ###   ########.fr       */
+/*   Created: 2023/09/18 16:42:05 by abarrio-          #+#    #+#             */
+/*   Updated: 2023/09/19 16:06:02 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#include "libft.h"
 
-// color de texto
-#define RED "\x1B[31m"
-#define GREEN "\x1B[32m"
-#define GREENFOSFI "\x1B[38;2;17;245;120m"
-#define	MORADO "\033[0;35m"
-#define CLEAR "\033[0m"
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int	i;
 
-#endif
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}

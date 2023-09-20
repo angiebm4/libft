@@ -6,13 +6,13 @@
 #    By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 11:55:51 by abarrio-          #+#    #+#              #
-#    Updated: 2023/09/16 19:19:43 by abarrio-         ###   ########.fr        #
+#    Updated: 2023/09/20 13:28:28 by abarrio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
-CFLAGS=-Wall -Werror -Wextra 
-#-g3 -fsanitize=address
+CFLAGS=-Wall -Werror -Wextra
+# -g3 -fsanitize=address
 FUNCTIONS=	ft_isalpha.c \
 			ft_isdigit.c \
 			ft_isalnum.c \
@@ -38,16 +38,34 @@ FUNCTIONS=	ft_isalpha.c \
 			ft_strdup.c \
 			ft_substr.c \
 			ft_strjoin.c \
-			ft_split.c
+			ft_strtrim.c \
+			ft_split.c \
+			ft_itoa.c \
+			ft_strmapi.c \
+			ft_striteri.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c
 
 OBJ= $(FUNCTIONS:%.c=%.o)
+
+BONUS=	ft_lstnew_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstadd_back_bonus.c
+
+OBJBONUS= $(BONUS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
+	ar -crs $(NAME) $(OBJ)
 #cc  $^ -o $(NAME)
+bonus: $(NAME) $(OBJBONUS)
+	ar -crs $(NAME) $^
 
+test_bonus: bonus testbonus.o
+	cc ${CFLAGS} testbonus.o -o bonus -L. -lft
 test: $(NAME) pruebas.o
 	cc ${CFLAGS} pruebas.o -o tests -L. -lft
 
@@ -58,8 +76,8 @@ test: $(NAME) pruebas.o
 	cc $(CFLAGS) -c $<
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(OBJBONUS)
 fclean: clean
 	rm -rf $(NAME)
 re: fclean all
-.PHONY: clean fclean re
+.PHONY: clean fclean re all
