@@ -6,7 +6,7 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:37:09 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/20 12:51:21 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:06:11 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_list *ft_lstnew(void *content)
 {
 	t_list	*node;
+	
 	
 	node =(t_list *)malloc(1 * sizeof(t_list));
 	if (!node)

@@ -6,7 +6,7 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:55:45 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/20 13:25:06 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:47:23 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -357,6 +357,10 @@ int	test_calloc(void)
 		return (0);
 	if (memcmp(ft_calloc(10,0), calloc(10, 0), 0) != 0)
 		return (0);
+	/*char *str1 = calloc(SIZE_MAX, 0);
+	char *str2 = ft_calloc(SIZE_MAX, 0);
+	printf("calloc vale %s\n", str1);
+	printf("ft_calloc vale %s\n", str2);*/
 	return (1);	
 }
 

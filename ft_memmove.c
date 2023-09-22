@@ -6,11 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:57:59 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/12 20:38:31 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:29:48 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

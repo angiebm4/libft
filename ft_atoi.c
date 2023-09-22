@@ -6,11 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:01:30 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/14 14:01:32 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:26:30 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

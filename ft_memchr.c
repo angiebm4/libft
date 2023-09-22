@@ -6,11 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:17:03 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/15 13:15:35 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:29:08 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(void *buffer, int c, size_t count)
 {

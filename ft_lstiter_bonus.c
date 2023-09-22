@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:56:26 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/21 17:27:33 by abarrio-         ###   ########.fr       */
+/*   Created: 2023/09/21 19:26:15 by abarrio-          #+#    #+#             */
+/*   Updated: 2023/09/21 19:32:38 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (c <= 127 && c >= 0)
-		return (1);
-	return (0);
+	t_list	*auxnode;
+	
+	if (!lst || !f)
+		return ;
+	auxnode = lst;
+	while (auxnode != NULL)
+	{
+		f(auxnode->content);
+		auxnode = auxnode->next;
+	}
 }

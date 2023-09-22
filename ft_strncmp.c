@@ -6,11 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:59:42 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/14 19:34:38 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:32:55 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {

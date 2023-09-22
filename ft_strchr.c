@@ -6,13 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:58:51 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/15 12:29:18 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:32:19 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strchr(const char *s, int c)
 {

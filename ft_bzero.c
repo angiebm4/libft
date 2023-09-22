@@ -6,11 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:54:29 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/12 12:07:47 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:26:45 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *str, size_t n)
 {

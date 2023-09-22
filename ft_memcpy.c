@@ -6,11 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:02:09 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/15 13:52:01 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:25:48 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *origen, size_t n)
 {

@@ -6,12 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:59:06 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/14 14:02:02 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:32:26 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

@@ -6,13 +6,11 @@
 /*   By: abarrio- <abarrio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:42:26 by abarrio-          #+#    #+#             */
-/*   Updated: 2023/09/18 19:50:25 by abarrio-         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:28:40 by abarrio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <limits.h>
 
 static int	ft_countnb(int n)
 {
